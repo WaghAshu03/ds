@@ -1,0 +1,69 @@
+Data Analytics III 
+1. Implement Simple Naïve Bayes classification algorithm using Python/R on iris.csv dataset. 
+2. Compute Confusion matrix to find TP, FP, TN, FN, Accuracy, Error rate, Precision, Recall on the given dataset.
+
+import pandas as pd
+# from sklearn.model_selection import train_test_split
+# from sklearn.naive_bayes import GaussianNB
+# from sklearn.metrics import confusion_matrix,accuracy_score,precision_score,recall_score,f1_score
+# from mlxtend.plotting import plot_confusion_matrix
+# import matplotlib.pyplot as plt
+
+# data=pd.read_csv("/content/IRIS.csv")
+# print(data)
+
+# ## Split the dataset into features (X) and target variable (y)
+# X = data.iloc[:, :-1].values
+# Y = data.iloc[:, -1].values
+
+# ## Split the dataset into training and testing sets
+# X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.25,random_state=0)
+
+# from sklearn.preprocessing import StandardScaler
+# sc=StandardScaler()
+# X_train=sc.fit_transform(X_train)
+# X_test=sc.transform(X_test)
+
+# ## Fit the Naïve Bayes classifier
+# classifier=GaussianNB()
+# classifier.fit(X_train,Y_train)
+
+# # Predict the target variable for the test set
+# Y_pred=classifier.predict(X_test)
+# print(Y_pred)
+
+# # Compute the confusion matrix
+# cm=confusion_matrix(Y_test,Y_pred)
+# print(cm)
+
+# plot_confusion_matrix(conf_mat=cm,figsize=[5,5],show_normed=True)
+# plt.show()
+
+
+# # Extract TP, FP, TN, FN from the confusion matrix
+# TN = cm[0, 0]
+# FP = cm[0, 1]+cm[0,2]
+# FN = cm[1, 0]+cm[2,0]
+# TP = cm[1, 1]+cm[2,2]
+
+# print("TN:",TN)
+# print("FP:",FP)
+# print("FN:",FN)
+# print("TP:",TP)
+
+
+# # Compute performance metrics
+# accuracy = accuracy_score(Y_test, Y_pred)
+# error_rate = 1 - accuracy
+# precision = precision_score(Y_test, Y_pred, average='weighted')
+# recall = recall_score(Y_test, Y_pred, average='weighted')
+# f1 = f1_score(Y_test, Y_pred, average='weighted')
+
+# # Print the confusion matrix and performance metrics
+# print("Confusion Matrix:")
+# print(cm)
+# print("Accuracy:", accuracy)
+# print("Error Rate:", error_rate)
+# print("Precision:", precision)
+# print("Recall:", recall)
+# print("F1 Score:", f1)

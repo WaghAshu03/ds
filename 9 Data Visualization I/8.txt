@@ -1,0 +1,92 @@
+Data Visualization I 
+	1. Use the inbuilt dataset 'titanic'. The dataset contains 891 rows and contains information about the 			passengers who boarded the unfortunate Titanic ship. Use the Seaborn library to see if we can find any 		patterns in the data. 
+	2. Write a code to check how the price of the ticket (column name: 'fare') for each passenger is distributed 		by plotting a histogram.
+
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df=sns.load_dataset("titanic")
+df.head()
+
+# Distributed plot
+sns.distplot(x=df['age'],bins=10)
+
+# Histogram
+sns.histplot(x=df['age'],bins=10,kde=True)
+
+# Joint PLot & Bar Plot
+# plot 1
+sns.jointplot(x=df['age'],y=df['fare'],kind='scatter')
+
+# Joint PLot & Bar Plot
+# plot 1
+sns.jointplot(x=df['age'],y=df['fare'],kind='scatter')
+
+# bar plot
+sns.barplot(x=df['sex'],y=df['age'])
+
+sns.barplot(x=df['sex'],y=df['age'],estimator=np.std)
+
+# count plot
+sns.countplot(x=df['sex'])
+
+# box plot
+sns.boxplot(x=df['sex'],y=df['age'])
+
+sns.boxplot(x=df['sex'],y=df['age'],hue=df['alive'])
+
+# violin plot
+sns.violinplot(x=df['sex'],y=df['age'])
+
+sns.violinplot(x=df['sex'],y=df['age'],hue=df['alive'])
+
+# strip plot
+sns.stripplot(x=df['sex'],y=df['age'],jitter=True,hue=df['alive'])
+
+sns.stripplot(x=df['sex'],y=df['age'],jitter=False,hue=df['alive'])
+
+# the swarm plot
+sns.swarmplot(x=df['sex'],y=df['age'],hue=df['alive'])
+
+# heat map
+df_encoded = pd.get_dummies(df)
+corr = df_encoded.corr()
+corr
+
+sns.heatmap(corr,annot=True)
+
+# Hist plot
+sns.histplot(df['fare'],bins=10)
+
+======================================================
+import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sb
+# df=sb.load_dataset("titanic")
+# df
+# df.isnull().sum()
+# z=df['age'].mean()
+# df['age']=df['age'].fillna(int(z))
+# df.isnull().sum()
+# df.shape
+# sb.distplot(x=df['age'],bins=10)
+# sb.jointplot(x=df['age'],y=df['fare'],kind='scatter')
+# sb.jointplot(x=df['age'],y=df['fare'],kind='hex')
+# sb.barplot(x='sex',y='age',data=df)
+# sb.barplot(x='sex',y='age',data=df,estimator=np.std)
+# sb.countplot(x='sex',data=df)
+# sb.boxplot(x='sex',y='age',data=df)
+# sb.boxplot(x='sex',y='age',data=df,hue='survived')
+# sb.violinplot(x='sex',y='age',data=df)
+# sb.violinplot(x='sex',y='age',data=df,hue='survived')
+# sb.stripplot(x='sex',y='age',data=df,jitter=False)
+# sb.stripplot(x='sex',y='age',data=df,jitter=True)
+# sb.stripplot(x='sex',y='age',data=df,jitter=True,hue='survived')
+# sb.swarmplot(x='sex',y='age',data=df)
+# corr=df.corr().round(2)
+# sb.heatmap(corr,annot=True)
+# sb.histplot(df['fare'],kde=False,bins=10)

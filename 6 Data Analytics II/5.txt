@@ -1,0 +1,64 @@
+Data Analytics II 
+	1. Implement logistic regression using Python/R to perform classification on Social_Network_Ads.csv dataset. 	
+	2. Compute Confusion matrix to find TP, FP, TN, FN, Accuracy, Error rate, Precision, Recall on the given dataset.
+
+import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sb
+
+# df=pd.read_csv("/content/Social_Network_Ads.csv")
+# df
+
+# X=df.iloc[:,[2,3]].values
+# y=df.iloc[:,4]
+
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.metrics import confusion_matrix,classification_report,accuracy_score,precision_score,recall_score,f1_score
+# from mlxtend.plotting import plot_confusion_matrix
+
+# X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3)
+
+# sc=StandardScaler()
+# X_train=sc.fit_transform(X_train)
+# X_test=sc.transform(X_test)
+
+# classifier=LogisticRegression()
+# classifier.fit(X_train,y_train)
+
+# y_pred=classifier.predict(X_test)
+# print(y_pred)
+# print("*"*16)
+# print(X_test)
+
+# cm=confusion_matrix(y_test,y_pred)
+# print(cm)
+
+# plot_confusion_matrix(conf_mat=cm,figsize=[5,5],show_normed=True)
+# plt.show()
+
+# TN = cm[0, 0]
+# FP = cm[0, 1]
+# FN = cm[1, 0]
+# TP = cm[1, 1]
+
+# print("TN:",TN)
+# print("FP:",FP)
+# print("FN:",FN)
+# print("TP:",TP)
+
+# accuracy=accuracy_score(y_test,y_pred)
+# error_rate=1-accuracy
+# precision=precision_score(y_test,y_pred)
+# recall=recall_score(y_test,y_pred)
+# f1=f1_score(y_test,y_pred)
+
+# print("Accuracy:",accuracy)
+# print("Error_Rate:",error_rate)
+# print("Precision:",precision)
+# print("Recall:",recall)
+# print("F1:",f1_score)
+
+# print(classification_report(y_test,y_pred))

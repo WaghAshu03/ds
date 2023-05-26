@@ -1,0 +1,71 @@
+Text Analytics
+	1. Extract Sample document and apply following document preprocessing methods: Tokenization, POS Tagging, 			stop words removal, Stemming and Lemmatization. 
+	2. Create representation of document by calculating Term Frequency and Inverse Document Frequency.
+
+#installing nltk,punkt
+!pip install nltk
+import nltk
+nltk.download('punkt')
+
+
+#sentence tokenization
+import nltk
+from nltk.tokenize import sent_tokenize
+
+text="""Hello Mr. Sumith, how are you doing today? The weather is great, and city is awsome.
+The sky is pinkish-blue. You shouldn't eat cardboard"""
+
+tokenized_text = sent_tokenize(text)
+print(tokenized_text)
+
+
+#Word tokenize
+from nltk.tokenize import word_tokenize
+tokenized_word=word_tokenize(text)
+print(tokenized_word)
+
+#Frequency Tokenization
+from nltk.probability import FreqDist
+fdist=FreqDist(tokenized_word)
+fdist
+fdist.most_common(3)
+
+import matplotlib.pyplot as plt
+fdist.plot()
+plt.show()
+
+
+#stemming & Lexicon Normalization
+# stemming
+from nltk.stem import PorterStemmer
+from nltk.tokenize import sent_tokenize,word_tokenize
+
+ps=PorterStemmer()
+s='fishing','fished','fisher','fish'
+ps.stem(s[0])
+
+#lemmatization
+word='playing'
+
+import nltk
+nltk.download('wordnet')
+from nltk.stem import WordNetLemmatizer
+wnl=WordNetLemmatizer()
+print(wnl.lemmatize(word,'n'))
+print(wnl.lemmatize(word,'v'))
+print(wnl.lemmatize(word,'a'))
+print(wnl.lemmatize(word,'r'))
+
+#POS tagging
+import nltk 
+nltk.download('averaged_perceptron_tagger')
+
+sents="Rajgad (literal meaning Ruling Fort) is a hill fort situated in Pune district"
+
+words=word_tokenize(sents)
+words
+
+nltk.download('omw-1.4')
+nltk.pos_tag(words)
+
+
